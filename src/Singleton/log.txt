@@ -1,0 +1,4 @@
+INFO: New log entry
+INFO: New log entry
+INFO: New log entry
+INFO: New log entry
