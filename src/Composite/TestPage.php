@@ -6,16 +6,13 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
-
-        $div = new Div();
-        $div->addChild(new H1('Wzorce projektowe'));
-        $div->addChild(new P('Definicja...'));
-        $sub = new Div();
-        $sub->addChild(new P('Klasyfikacja...'));
+        $div = new Composite\Div();
+        $div->addChild(new Composite\H1('Design Patterns'));
+        $div->addChild(new Composite\P('Definition...'));
+        $sub = new Composite\Div();
+        $sub->addChild(new Composite\P('Classification...'));
         $div->addChild($sub);
         echo $div->render(), "\n";
         ?>

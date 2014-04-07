@@ -1,4 +1,5 @@
 <?php
+namespace Mediator;
 
 class HtmlEntitiesFilter implements Filter {
 

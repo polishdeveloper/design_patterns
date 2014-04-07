@@ -1,4 +1,5 @@
 <?php
+namespace AbstractFactory;
 
 class XMLFileWriter implements Writer {
     const FILE_EXTENSION = ".xml";
@@ -9,7 +10,7 @@ class XMLFileWriter implements Writer {
         $xml = simplexml_load_string(sprintf(self::XML_ENVELOPE, $content));
         $result = file_put_contents($fileName . self::FILE_EXTENSION, $xml->asXML());
         if ($result === false) {
-            throw new Exception('Error while writing to file:' . $fileName . self::FILE_EXTENSION);
+            throw new \RuntimeException('Error while writing to file:' . $fileName . self::FILE_EXTENSION);
         }
     }
 

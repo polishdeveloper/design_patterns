@@ -1,6 +1,7 @@
 <?php
+namespace Iterator;
 
-class Collection implements Iterator {
+class Collection implements \Iterator {
 
     private $_content;
     private $_index = 0;

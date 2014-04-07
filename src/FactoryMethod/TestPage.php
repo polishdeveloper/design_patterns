@@ -6,15 +6,12 @@
     </head>
     <body>
         <?php
-
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
+        require_once('../init.php');
 
         $fileName = 'data'.DIRECTORY_SEPARATOR.'application';
-        $readerFactory = new SimpleReaderFactory();
-        $reader = $readerFactory->createReader(SimpleReaderFactory::TXT_READER);
-        //$reader = $readerFactory->createReader(SimpleReaderFactory::XML_READER);
+        $readerFactory = new FactoryMethod\SimpleReaderFactory();
+        //$reader = $readerFactory->createReader(FactoryMethod\SimpleReaderFactory::TXT_READER);
+        $reader = $readerFactory->createReader(FactoryMethod\SimpleReaderFactory::XML_READER);
 
         echo "Content loaded: " . htmlentities($reader->read($fileName));
         ?>

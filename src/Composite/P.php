@@ -1,4 +1,5 @@
 <?php
+namespace Composite;
 
 class P implements HtmlElement {
 

@@ -1,4 +1,5 @@
 <?php
+namespace Proxy;
 
 class RawImage extends AbstractImage {
 

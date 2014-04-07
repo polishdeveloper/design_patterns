@@ -6,20 +6,16 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
-
-        //bez fasady
-        $adder = new Adder();
+        //without facade
+        $adder = new Facade\Adder();
         echo '54 + 13 = ', $adder->add(54, 13), "\n<br/>";
-        $divider = new Divider();
+        $divider = new Facade\Divider();
         echo '36 / 6 = ', $divider->divide(36, 6), "\n<br/>";
 
-        //z fasadą
-
-        $calculatorFactory = new CalculatorFactory;
+        //with facade
+        $calculatorFactory = new Facade\CalculatorFactory;
         $calculator = $calculatorFactory->getCalculator();
         echo '54 + 13 = ', $calculator->calculate('54 + 13'), "\n<br/>";
         echo '36 / 6 = ', $calculator->calculate('36 / 6'), "\n";

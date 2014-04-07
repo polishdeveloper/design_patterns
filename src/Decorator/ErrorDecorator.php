@@ -1,4 +1,5 @@
 <?php
+namespace Decorator;
 
 class ErrorDecorator extends HtmlElementDecorator {
 
@@ -9,8 +10,13 @@ class ErrorDecorator extends HtmlElementDecorator {
     }
 
     public function __toString() {
-        return $this->_element->__toString()
-        . "<span style='color:red;'>{$this->_error}</span>\n";
+        return $this->_element->__toString() .
+        $this->getErrorMessageAsHTML();
+
+    }
+
+    private function getErrorMessageAsHTML() {
+        return "<span style='color:red;'>{$this->_error}</span>\n";
     }
 
 }

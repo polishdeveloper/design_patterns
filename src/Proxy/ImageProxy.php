@@ -1,7 +1,11 @@
 <?php
+namespace Proxy;
 
 class ImageProxy extends AbstractImage {
 
+    /**
+     * @var AbstractImage
+     */
     private $_realImage;
 
     public function __construct($path) {

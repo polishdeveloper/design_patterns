@@ -1,4 +1,5 @@
 <?php
+namespace Bridge;
 
 class IndexedWebsiteImplementor implements WebsiteImplementor {
 

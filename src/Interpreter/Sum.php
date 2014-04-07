@@ -1,4 +1,5 @@
 <?php
+namespace Interpreter;
 
 class Sum implements MathExpression {
 

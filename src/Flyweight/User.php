@@ -1,6 +1,10 @@
 <?php
+namespace Flyweight;
 
 class User {
+    private $_firstName;
+    private $_lastName;
+    private $_nationality;
 
     public function setFirstName($firstName) {
         $this->_firstName = $firstName;

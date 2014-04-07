@@ -6,15 +6,12 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
-
-        $sum = new Sum(11,22);
+        $sum = new TemplateMethod\Sum(11,22);
         echo $sum->getOperationResult() . "<br/>";
 
-        $sub = new NonNegativeSubstraction(22, 11);
+        $sub = new TemplateMethod\NonNegativeSubstraction(22, 11);
         echo $sub->getOperationResult() . "<br/>";
 
         ?>

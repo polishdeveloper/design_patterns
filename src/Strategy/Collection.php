@@ -1,6 +1,7 @@
 <?php
+namespace Strategy;
 
-class Collection implements Countable {
+class Collection implements \Countable {
 
     private $_elements;
     private $_comparator;

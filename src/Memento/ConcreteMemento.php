@@ -1,4 +1,5 @@
 <?php
+namespace Memento;
 
 class ConcreteMemento implements Memento {
 

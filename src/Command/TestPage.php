@@ -6,12 +6,9 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
-
-        $processor = new ArrayProcessor(new EvenValidator());
+        $processor = new Command\ArrayProcessor(new Command\EvenValidator());
         $processor->process(array(1, 20, 18, 5, 0, 31, 42));
         ?>
     </body>

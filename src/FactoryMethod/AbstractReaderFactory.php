@@ -1,4 +1,5 @@
 <?php
+namespace FactoryMethod;
 
 interface AbstractReaderFactory {
 

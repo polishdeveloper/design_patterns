@@ -6,14 +6,11 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
-
-        $array = array('czerwony', 'czarny', 'zielony');
-        $adapter = new ArrayAdapter($array);
-        $printer = new Printer();
+        $array = array('red', 'black', 'green', 'white');
+        $adapter = new Adapter\ArrayAdapter($array);
+        $printer = new Adapter\Printer();
         $printer->printAll($adapter);
         ?>
     </body>

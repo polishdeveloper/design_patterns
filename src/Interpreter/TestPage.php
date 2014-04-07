@@ -6,15 +6,13 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
-
-        //5(a + 11) gdzie a = 3;
+        //5(a + 11) where a = 3;
 
         $expression 
-        = new Product(new Literal(5), new Sum(new Variable('a'), new Literal(11)));
+        = new Interpreter\Product(new Interpreter\Literal(5),
+            new Interpreter\Sum(new Interpreter\Variable('a'), new Interpreter\Literal(11)));
 
 
         echo $expression->evaluate(array('a' => 3));

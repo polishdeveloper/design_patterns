@@ -1,4 +1,5 @@
 <?php
+namespace Decorator;
 
 abstract class HtmlElementDecorator implements HtmlElement {
 

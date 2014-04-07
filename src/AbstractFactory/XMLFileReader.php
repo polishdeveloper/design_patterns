@@ -1,4 +1,5 @@
 <?php
+namespace AbstractFactory;
 
 class XMLFileReader implements Reader {
     const FILE_EXTENSION = ".xml";
@@ -7,7 +8,7 @@ class XMLFileReader implements Reader {
         $fileName .= self::FILE_EXTENSION;
         $xml = simplexml_load_file($fileName);
         if ($xml === false) {
-            throw new RuntimeException("Error while reading from file: " . $fileName);
+            throw new \RuntimeException("Error while reading from file: " . $fileName);
         }
         return $xml->asXML();
     }

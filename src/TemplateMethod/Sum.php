@@ -1,4 +1,5 @@
 <?php
+namespace TemplateMethod;
 
 class Sum extends BinaryOperation {
 

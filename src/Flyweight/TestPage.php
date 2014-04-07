@@ -6,27 +6,23 @@
     </head>
     <body>
         <?php
-
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
+        require_once('../init.php');
 
 
-        $user1 = new User();
-        $user1->setFirstName("Jan")
+        $user1 = new Flyweight\User();
+        $user1->setFirstName("Rob")
+                ->setLastName("Ford")
+                ->setNationality(Flyweight\Nationality::getInstance("Canadian"));
+
+        $user2 = new Flyweight\User();
+        $user2->setFirstName("John")
                 ->setLastName("Kowalski")
-                ->setNationality(Nationality::getInstance("Niemcy"));
+                ->setNationality(Flyweight\Nationality::getInstance("Polish"));
 
-        $user2 = new User();
-        $user2->setFirstName("Maria")
-                ->setLastName("Nowak")
-                ->setNationality(Nationality::getInstance("Polska"));
-
-        $user1->setNationality(Nationality::getInstance("Polska"));
+        $user1->setNationality(Flyweight\Nationality::getInstance("Polish"));
 
         var_dump($user1);
         var_dump($user2);
-
 
         ?>
     </body>

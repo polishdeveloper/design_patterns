@@ -1,4 +1,5 @@
 <?php
+namespace ChainOfResponsibility;
 
 abstract class AbstractKeyValueStore implements KeyValueStore {
 

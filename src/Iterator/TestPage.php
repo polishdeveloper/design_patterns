@@ -6,14 +6,11 @@
     </head>
     <body>
         <?php
-
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
+        require_once('../init.php');
 
         $array = array('A', 'B', 'C', 'D');
         echo "Collection: ";
-        foreach (new Collection($array) as $key => $value) {
+        foreach (new Iterator\Collection($array) as $key => $value) {
             echo "$key => $value. ";
         }
         echo "\n";

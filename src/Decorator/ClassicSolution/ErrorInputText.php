@@ -1,4 +1,5 @@
 <?php
+namespace Decorator\ClassicSolution;
 
 class ErrorInputText extends InputText {
 

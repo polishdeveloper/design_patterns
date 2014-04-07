@@ -6,22 +6,19 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
+        $store = new ChainOfResponsibility\SlowStore(array('pm' => 'Peter Miazga',
+                    'js' => 'John Smith',
+                    'ek' => 'Emma Kowalski',
+                    'rj' => 'Robert Johnson'));
 
-        $store = new SlowStore(array('jn' => 'Jan Nowak',
-                    'mn' => 'Maria Nowak',
-                    'mm' => 'Michał Miły',
-                    'bk' => 'Basia Kowalska'));
+        $cache = new ChainOfResponsibility\InMemoryKeyValueStore($store);
+        $frontEnd = new ChainOfResponsibility\SafeKeyValueStore($cache);
 
-        $cache = new InMemoryKeyValueStore($store);
-        $frontEnd = new SafeKeyValueStore($cache);
-
-        echo $frontEnd->get('mm'), "\n<br/>";
-        echo $frontEnd->get('bk'), "\n<br/>";
-        echo $frontEnd->get('bk'), "\n<br/>";
+        echo $frontEnd->get('pm'), "\n<br/>";
+        echo $frontEnd->get('js'), "\n<br/>";
+        echo $frontEnd->get('js'), "\n<br/>";
         ?>
     </body>
 </html>

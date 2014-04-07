@@ -1,4 +1,5 @@
 <?php
+namespace Prototype;
 
 class ProductCache {
 

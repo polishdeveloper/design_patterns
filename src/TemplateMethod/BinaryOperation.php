@@ -1,4 +1,5 @@
 <?php
+namespace TemplateMethod;
 
 abstract class BinaryOperation {
 

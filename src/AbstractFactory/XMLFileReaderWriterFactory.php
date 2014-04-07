@@ -1,4 +1,5 @@
 <?php
+namespace AbstractFactory;
 
 class XMLFileReaderWriterFactory implements AbstractReaderWriterFactory {
 

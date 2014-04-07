@@ -6,14 +6,11 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
-
-        $user = new User('Lukasz');
-        $user->attach(new TwitterStatusObserver());
-        $user->setStatus('Lukasz working...');
+        $user = new Observer\User('Lukasz');
+        $user->attach(new Observer\TwitterStatusObserver());
+        $user->setStatus("I'm working");
         ?>
     </body>
 </html>

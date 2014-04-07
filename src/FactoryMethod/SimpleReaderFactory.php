@@ -1,4 +1,5 @@
 <?php
+namespace FactoryMethod;
 
 class SimpleReaderFactory implements AbstractReaderFactory {
     const TXT_READER = "txt";
@@ -7,7 +8,7 @@ class SimpleReaderFactory implements AbstractReaderFactory {
     /**
      * @param string $type Reader type
      * @return Reader
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     public function createReader($type) {
         switch($type) {
@@ -16,7 +17,7 @@ class SimpleReaderFactory implements AbstractReaderFactory {
             case SimpleReaderFactory::XML_READER:
                 return new XMLFileReader();
             default :
-            throw new InvalidArgumentException("Illegal reader type");
+            throw new \InvalidArgumentException("Illegal reader type");
         }
     }
 }

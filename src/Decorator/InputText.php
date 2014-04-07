@@ -1,4 +1,5 @@
 <?php
+namespace Decorator;
 
 class InputText implements HtmlElement {
 

@@ -1,4 +1,5 @@
 <?php
+namespace Composite;
 
 class Div implements HtmlElement {
 

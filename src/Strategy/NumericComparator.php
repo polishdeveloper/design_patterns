@@ -1,4 +1,5 @@
 <?php
+namespace Strategy;
 
 class NumericComparator implements Comparator {
 

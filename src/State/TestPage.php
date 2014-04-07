@@ -6,12 +6,9 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
-
-        $validator = new ParityBitValidator(new StartState());
+        $validator = new State\ParityBitValidator(new State\StartState());
         var_dump($validator->isValid('10101001101'));
         var_dump($validator->isValid('101010011011'));
         ?>

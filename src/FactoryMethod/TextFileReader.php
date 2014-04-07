@@ -1,4 +1,5 @@
 <?php
+namespace FactoryMethod;
 
 class TextFileReader implements Reader {
     const FILE_EXTENSION = ".txt";

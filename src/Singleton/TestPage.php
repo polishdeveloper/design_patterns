@@ -6,12 +6,10 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
-
-        Logger::getInstance()->log("INFO: New log entry");
+        Singleton\Logger::getInstance()->log("INFO: New log entry on " . date('Y-m-d H:i:s'));
         ?>
+        Entry should be added to log
     </body>
 </html>

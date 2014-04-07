@@ -1,4 +1,6 @@
 <?php
+namespace Proxy;
+
 abstract class AbstractImage {
 
     protected $_width;
@@ -17,6 +19,12 @@ abstract class AbstractImage {
     public function getPath() {
         return $this->_path;
     }
+
+    public function getType() {
+       return pathinfo($this->_path, PATHINFO_EXTENSION);
+    }
+
+    abstract function dump();
 
 
 

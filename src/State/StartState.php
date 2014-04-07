@@ -1,4 +1,5 @@
 <?php
+namespace State;
 
 class StartState implements State {
 
@@ -8,11 +9,11 @@ class StartState implements State {
         } else if ($input == 0) {
             return new EvenState();
         }
-        throw new Exception("Illegal argument exception");
+        throw new \InvalidArgumentException();
     }
 
     public function valid() {
-        throw new Exception("Illegal state exception");
+        throw new \RuntimeException("Illegal state exception");
     }
 
 }

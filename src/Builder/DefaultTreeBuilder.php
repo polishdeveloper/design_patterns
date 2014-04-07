@@ -1,4 +1,5 @@
 <?php
+namespace Builder;
 
 class DefaultTreeBuilder implements TreeBuilder {
 

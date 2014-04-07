@@ -1,4 +1,5 @@
 <?php
+namespace Composite;
 
 class H1 implements HtmlElement {
 

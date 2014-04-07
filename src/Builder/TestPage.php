@@ -6,21 +6,19 @@
     </head>
     <body>
         <?php
-
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
+        require_once('../init.php');
 
         $values = array(1, 3, 4, 6, 2, 4, 6, 2, 5, 7);
 
-        $treeBuilder = new DefaultTreeBuilder();
-        //$treeBuilder = new RandomTreeBuilder();
+        $treeBuilder = new Builder\DefaultTreeBuilder();
+        //$treeBuilder = new Builder\RandomTreeBuilder();
 
-        $director = new Director($treeBuilder);
+        $director = new Builder\Director($treeBuilder);
 
         $director->constructTree($values);
         echo "<pre>";
         print_r($director->getConstructedTree());
+        echo "<pre>";
         ?>
     </body>
 </html>

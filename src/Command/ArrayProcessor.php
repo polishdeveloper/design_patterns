@@ -1,4 +1,5 @@
 <?php
+namespace Command;
 
 class ArrayProcessor {
 
@@ -11,7 +12,7 @@ class ArrayProcessor {
     public function process(array $numbers) {
         foreach ($numbers as $n) {
             if ($this->_rule->IsValid($n)) {
-                echo $n, "\n";
+                echo "$n <br/> ";
             }
         }
     }

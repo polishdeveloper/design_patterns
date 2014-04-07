@@ -1,4 +1,5 @@
 <?php
+namespace Bridge;
 
 class PresentationWebsite extends Website {
 

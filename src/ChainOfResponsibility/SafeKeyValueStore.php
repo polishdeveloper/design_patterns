@@ -1,4 +1,5 @@
 <?php
+namespace ChainOfResponsibility;
 
 class SafeKeyValueStore extends AbstractKeyValueStore {
 

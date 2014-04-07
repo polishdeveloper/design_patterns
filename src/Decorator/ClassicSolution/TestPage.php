@@ -6,16 +6,13 @@
     </head>
     <body>
         <?php
+        require_once('../../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
-
-        $input = new LabelledInputText('nickname');
+        $input = new Decorator\ClassicSolution\LabelledInputText('nickname');
         $input->setLabel('Nick:');
         echo $input . "<br/>\n";
 
-        $errorInput = new ErrorInputText('nickname');
+        $errorInput = new Decorator\ClassicSolution\ErrorInputText('nickname');
         $errorInput->setError('You must enter a unique nickname');
         echo $errorInput;
         ?>

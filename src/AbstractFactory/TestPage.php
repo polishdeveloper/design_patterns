@@ -6,22 +6,19 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
+        $fileName = DATA_FOLDER . 'application';
+        $content = "Very important data stored at " . date('Y-m-d H:i:s');
 
-        $fileName = 'application';
-        $content = "Very important data";
-
-        //$rwFactory = TextFileReaderWriterFactory::getInstance();
-        $rwFactory = XMLFileReaderWriterFactory::getInstance();
+        $rwFactory = new AbstractFactory\TextFileReaderWriterFactory();
+        //$rwFactory = new AbstractFactory\XMLFileReaderWriterFactory();
 
         $reader = $rwFactory->createReader();
         $writer = $rwFactory->createWriter();
 
         $writer->write($fileName, $content);
-        echo "Content loaded: " . htmlentities($reader->read($fileName));
+        echo "Content loaded: " . htmlentities($reader->read($fileName)) . "<br/>\n";
         echo "Content saved: " . $content . "<br/>\n";
 
         ?>

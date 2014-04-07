@@ -1,6 +1,7 @@
 <?php
+namespace Adapter;
 
-interface Collection extends IteratorAggregate {
+interface Collection extends \IteratorAggregate {
 
     public function add($element);
 

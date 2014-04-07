@@ -1,4 +1,5 @@
 <?php
+namespace Facade;
 
 class Calculator {
 
@@ -25,6 +26,8 @@ class Calculator {
             case '/':
                 return $this->_divider->divide($a, $b);
                 break;
+            default :
+                throw new \InvalidArgumentException('Unknown operation ' . $operator);
         }
     }
 

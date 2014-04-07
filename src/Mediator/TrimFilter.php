@@ -1,4 +1,5 @@
 <?php
+namespace Mediator;
 
 class TrimFilter implements Filter {
 

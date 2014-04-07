@@ -1,4 +1,5 @@
 <?php
+namespace Interpreter;
 
 class Literal implements MathExpression {
 

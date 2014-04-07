@@ -1,4 +1,5 @@
 <?php
+namespace Adapter;
 
 class ArrayAdapter implements Collection {
 
@@ -24,7 +25,7 @@ class ArrayAdapter implements Collection {
     }
 
     public function getIterator() {
-        return new ArrayIterator($this->_array);
+        return new \ArrayIterator($this->_array);
     }
 
 }

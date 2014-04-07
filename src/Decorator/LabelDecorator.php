@@ -1,4 +1,5 @@
 <?php
+namespace Decorator;
 
 class LabelDecorator extends HtmlElementDecorator {
 
@@ -9,9 +10,12 @@ class LabelDecorator extends HtmlElementDecorator {
     }
 
     public function __toString() {
+        return $this->getLabelAsHTML() . $this->_element->__toString();
+    }
+
+    private function getLabelAsHTML() {
         $name = $this->getName();
-        return "<label for=\"{$name}\">{$this->_label}</label>\n"
-        . $this->_element->__toString();
+        return "<label for=\"{$name}\">{$this->_label}</label>\n";
     }
 
 }

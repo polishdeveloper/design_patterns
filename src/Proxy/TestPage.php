@@ -6,26 +6,21 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
+        function tag(Proxy\AbstractImage $img) {
+            return sprintf('<img src="data:image/%s;base64,%s" alt="" width="%s" height="%s" />', $img->getType(), base64_encode($img->dump()),  $img->getWidth(), $img->getHeight());
         }
 
-        function tag(AbstractImage $img) {
-            return '<img src="' . $img->getPath() . '" alt="" width="'
-            . $img->getWidth() . '" height="'
-            . $img->getHeight() . '" />';
-        }
+        $path = __DIR__ . '/data/barimage.bmp';
 
-        $path = "barimage.bmp";
+//        $image = new Proxy\RawImage($path);
 
-        $image = new RawImage($path);
+
+        $image = new Proxy\ImageProxy($path);
+
+
         echo tag($image);
-
-        $image = new ImageProxy($path);
-        echo tag($image);
-
-        $image->dump();
         ?>
     </body>
 </html>

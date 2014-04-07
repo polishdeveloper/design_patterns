@@ -1,4 +1,5 @@
 <?php
+namespace Command;
 
 class MoreThanZeroValidator implements Validator {
 

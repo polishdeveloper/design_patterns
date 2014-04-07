@@ -6,18 +6,15 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
+        $input = new Mediator\InputElement();
+        $input->addFilter(new Mediator\EmptyFilter())
+                ->addFilter(new Mediator\TrimFilter())
+                ->addFilter(new Mediator\HtmlEntitiesFilter());
+        $input->setValue('  this is a test of <b>mediator</b> pattern  ');
 
-        $input = new InputElement();
-        $input->addFilter(new EmptyFilter())
-                ->addFilter(new TrimFilter())
-                ->addFilter(new HtmlEntitiesFilter());
-        $input->setValue('  to jest test <b>mediatora</b>  ');
-
-        echo $input->getValue();
+        echo '[' . $input->getValue() . ']';
 
 
         ?>

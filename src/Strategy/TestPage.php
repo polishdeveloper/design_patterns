@@ -6,18 +6,15 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
-
-        $number = new Collection(array(4,7,1,2,4,9,7));
-        $number->setComparator(new NumericComparator());
+        $number = new Strategy\Collection(array(4,7,1,2,4,9,7));
+        $number->setComparator(new Strategy\NumericComparator());
         $number->sort();
         $number->printAll();
 
-        $objects = new Collection(array(array(1,3,4), new Collection(array(1,2,8,4,5)), array(1,4)));
-        $objects->setComparator(new CountableObjectComparator());
+        $objects = new Strategy\Collection(array(array(1,3,4), new Strategy\Collection(array(1,2,8,4,5)), array(1,4)));
+        $objects->setComparator(new Strategy\CountableObjectComparator());
         $objects->sort();
         $objects->printAll();
 

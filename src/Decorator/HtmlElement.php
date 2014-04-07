@@ -1,4 +1,5 @@
 <?php
+namespace Decorator;
 
 interface HtmlElement {
 

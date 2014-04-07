@@ -1,6 +1,7 @@
 <?php
+namespace Observer;
 
-class User {
+class User implements IdentityProvider {
 
     protected $_nickname;
     protected $_observers = array();
@@ -10,12 +11,8 @@ class User {
         $this->_nickname = $nickname;
     }
 
-    public function getNickname() {
+    public function getName() {
         return $this->_nickname;
-    }
-
-    public function attach(UserObserver $observer) {
-        $this->_observers[] = $observer;
     }
 
     public function setStatus($text) {
@@ -27,7 +24,15 @@ class User {
         return $this->_status;
     }
 
+
+    public function attach(IdentityObserver $observer) {
+        $this->_observers[] = $observer;
+    }
+
     protected function _notify() {
+        /**
+         * @var IdentityObserver $observer
+         */
         foreach ($this->_observers as $observer) {
             $observer->update($this);
         }

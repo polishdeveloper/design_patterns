@@ -1,4 +1,5 @@
 <?php
+namespace State;
 
 class ParityBitValidator {
 

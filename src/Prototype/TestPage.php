@@ -6,12 +6,9 @@
     </head>
     <body>
         <?php
+        require_once('../init.php');
 
-        function __autoload($className) {
-            include_once $className . '.php';
-        }
-
-        $productCache = ProductCache::getInstance();
+        $productCache = Prototype\ProductCache::getInstance();
 
 
         $book = $productCache->getProduct('b1');

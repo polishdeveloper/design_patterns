@@ -1,13 +1,14 @@
 <?php
+namespace Singleton;
 
 class Logger {
-    const LOG_FILE = "data/log.txt";
+    const LOG_FILENAME = "log.txt";
 
     private static $_instance;
     private $_fp;
 
     private function __construct() {
-        $this->_fp = fopen(self::LOG_FILE, 'a');
+        $this->_fp = fopen(DATA_FOLDER . self::LOG_FILENAME, 'a');
         register_shutdown_function(array($this, 'shutdown'));
     }
 
@@ -27,7 +28,10 @@ class Logger {
     }
 
     public function log($text) {
-        fwrite($this->_fp, $text . PHP_EOL);
+        $result = fwrite($this->_fp, $text . PHP_EOL);
+        if ($result === false) {
+            throw new \RuntimeException('Cannot log');
+        }
     }
 
 }

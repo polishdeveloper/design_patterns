@@ -1,4 +1,5 @@
 <?php
+namespace ChainOfResponsibility;
 
 class SlowStore implements KeyValueStore {
 
@@ -10,7 +11,6 @@ class SlowStore implements KeyValueStore {
 
     public function get($key) {
         if (isset($this->_values[$key])) {
-            echo "Reading from slow store...<br/>";
             return $this->_values[$key];
         }
     }
