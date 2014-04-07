@@ -1,0 +1,4 @@
+<a href="index.php?<?php echo http_build_query(array('pattern' => $this->name)); ?>" class="list-group-item">
+    <h4 class="list-group-item-heading"><?php echo htmlentities($this->name); ?></h4>
+    <p class="list-group-item-text"><?php echo htmlentities($this->description); ?></p>
+</a>
