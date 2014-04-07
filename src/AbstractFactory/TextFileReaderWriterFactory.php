@@ -2,11 +2,11 @@
 
 class TextFileReaderWriterFactory implements AbstractReaderWriterFactory {
 
+    /**
+     * @var TextFileReaderWriterFactory
+     */
     static private $_instance;
 
-    private function __construct() {
-        
-    }
 
     static public function getInstance() {
         if (!isset(self::$_instance)) {
@@ -15,14 +15,20 @@ class TextFileReaderWriterFactory implements AbstractReaderWriterFactory {
         return self::$_instance;
     }
 
-    private final function  __clone() {
 
-    }
+    private function __construct() {}
+    private final function  __clone() {}
 
+    /**
+     * @return Reader
+     */
     public function createReader() {
         return new TextFileReader();
     }
 
+    /**
+     * @return Writer
+     */
     public function createWriter() {
         return new TextFileWriter();
     }

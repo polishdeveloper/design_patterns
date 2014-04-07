@@ -4,6 +4,11 @@ class SimpleReaderFactory implements AbstractReaderFactory {
     const TXT_READER = "txt";
     const XML_READER = "xml";
 
+    /**
+     * @param string $type Reader type
+     * @return Reader
+     * @throws InvalidArgumentException
+     */
     public function createReader($type) {
         switch($type) {
             case SimpleReaderFactory::TXT_READER:

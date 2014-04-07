@@ -1,7 +1,7 @@
 <?php
 
 class Logger {
-    const LOG_FILE = "log.txt";
+    const LOG_FILE = "data/log.txt";
 
     private static $_instance;
     private $_fp;
@@ -27,7 +27,7 @@ class Logger {
     }
 
     public function log($text) {
-        fwrite($this->_fp, $text . "\n");
+        fwrite($this->_fp, $text . PHP_EOL);
     }
 
 }

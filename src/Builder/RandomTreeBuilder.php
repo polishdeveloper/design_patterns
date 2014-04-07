@@ -4,7 +4,7 @@ class RandomTreeBuilder implements TreeBuilder {
 
     private $_tree;
 
-    public function addValues($values) {
+    public function addValues(array $values) {
         foreach ($values as $value) {
             $this->_tree = $this->_addTo($value, $this->_tree);
         }

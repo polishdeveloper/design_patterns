@@ -11,7 +11,7 @@
             include_once $className . '.php';
         }
 
-        $fileName = 'application';
+        $fileName = 'data'.DIRECTORY_SEPARATOR.'application';
         $readerFactory = new SimpleReaderFactory();
         $reader = $readerFactory->createReader(SimpleReaderFactory::TXT_READER);
         //$reader = $readerFactory->createReader(SimpleReaderFactory::XML_READER);

@@ -3,9 +3,17 @@
 class TextFileReader implements Reader {
     const FILE_EXTENSION = ".txt";
 
+    /**
+     * @param string $fileName
+     * @throws RuntimeException
+     * @return string
+     */
     public function read($fileName) {
-        $text = file_get_contents($fileName . self::FILE_EXTENSION)
-                or die("Error while reading from file: " . $fileName . self::FILE_EXTENSION);
+        $filename = $fileName . self::FILE_EXTENSION;
+        $text = file_get_contents($filename);
+        if ($text === false) {
+            throw new RuntimeException("Error while reading from file: " . $fileName);
+        }
         return $text;
     }
 
