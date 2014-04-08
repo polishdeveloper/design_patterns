@@ -24,6 +24,6 @@ class ExceptionPage extends Page {
 
     protected function execute()
     {
-        echo $this->exception->getTraceAsString();
+        echo 'Stacktrace : <pre>' . $this->exception->getTraceAsString() . '</pre>';
     }
 }

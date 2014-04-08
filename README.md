@@ -1,4 +1,5 @@
-design_patterns
+PHP Design Pattern
 ===============
 
-PHP Design Patterns
+Example available at http://dev.raynor.pl/design_patterns/index.php
+

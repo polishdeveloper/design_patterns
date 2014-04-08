@@ -9,7 +9,14 @@ class PatternPage extends Page {
     private $patternExample;
 
     public function loadPattern($patternName) {
-        $className = "$patternName\\Example";
+;
+        if (preg_match('/^[a-zA-Z]+$/', $patternName) === 0) {
+            throw new RuntimeException('Incorrect pattern name');
+        }
+        $className = "$patternName\Example";
+        if (!class_exists($className)) {
+            throw new RuntimeException('Design pattern not found');
+        }
         $this->patternExample = new $className();
     }
 
